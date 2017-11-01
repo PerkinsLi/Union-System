@@ -1,0 +1,24 @@
+<div class="login-page">
+    <div class="content" ng-controller="login">
+        <div class="img_div">
+            <img src="../images/entrance_image.png">
+        </div>
+
+        <div class="login_div">
+            <div class="title_div">
+                <p class="union_information">联合工会会员信息系统</p>
+                <p class="user_login">用户登录</p>
+            </div>
+            <div class="error" ng-class="{true : 'show_error_div'}[showState]">{{loginError}}</div>
+            <div class="login_form">
+                <input type="text" ng-model="username" ng-keydown="keyDownEvent()"><br>
+                <input type="password" ng-model="password" ng-keydown="keyDownEvent()">
+                <button name="login-btn"
+                        ng-click="login()"
+                        ng-disabled="!username || !password"
+                        ng-class="{'disable-bg-color': !username || !password}">立即登录</button>
+                <p><a href="#">忘记密码</a></p>
+            </div>
+        </div>
+    </div>
+</div>

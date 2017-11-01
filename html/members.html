@@ -1,0 +1,135 @@
+<div class="members-page">
+    <div class="left" ng-controller="navigationController">
+        <div class="title">
+            <div class="profile"></div>
+            <a class="website-name">联合工会会员信息系统</a>
+            <div>
+                <span>{{userName}}</span>
+                <img src="../images/triangle.png" alt="展开">
+            </div>
+        </div>
+
+        <div id="line"></div>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <div ng-repeat="navLevelOneItem in nav" class="nav-container" ng-init="outerIndex = $index">
+                <div class="nav-level-1" ng-click="navLevelOneSelected($index)" ng-class="{true: 'selected', false: 'un-selected'}[navLevelOneItem.selected]">
+                    <img ng-src="{{navLevelOneItem.signIcon}}">
+                    <span ng-bind="navLevelOneItem.name"></span>
+                    <img ng-click="navExpand($index)" ng-src="{{navLevelOneItem.stateIcon}}">
+                </div>
+
+                <div class="nav-level-2" ng-class="{'nav-level-2-show': navLevelOneItem.expand,'selected': navItemTwo.selected}" ng-repeat="navItemTwo in navLevelOneItem.subNavs"
+                    ng-click="navLevelTwoSected(outerIndex, $index)">
+                    <img ng-src="{{navItemTwo.signIcon}}">
+                    <span ng-click="" ng-class="{true: 'selected'}[navItemTwo.selected]" ng-bind="navItemTwo.name">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <span class="header">工会会员信息</span>
+        <div class="searchs">
+            <div>
+                <input type="text" name="name" id="select-by-name" placeholder="请输入会员号/姓名">
+                <img src="../images/search_icn.png" id="input-pic">
+            </div>
+            <div>
+                <input type="text" class="select-1" placeholder="标签">
+                <img src="../images/invert_arrow.png" class="input-pic1">
+            </div>
+            <div>
+                <input type="text" class="select-1" placeholder="出生月份" style="width:110px;">
+                <img src="../images/invert_arrow.png" class="input-pic1">
+            </div>
+            <div>
+                <input type="text" class="select-1" placeholder="所有分工会" style="width:230px;">
+                <img src="../images/invert_arrow.png" class="input-pic1">
+            </div>
+            <a href="#" class="right-font">高级搜索▼</a>
+        </div>
+
+        <div class="select-all">
+            <div>
+                <input type="checkbox">
+                <a>全选(16)</a>
+            </div>
+
+            <div>
+                <button>
+                    <img src="../images/label.png" class="button-pic0">
+                    <span>群发消息</span>
+                    <img src="../images/invert_arrow.png" class="button-pic">
+                </button>
+            </div>
+
+            <div>
+                <button>
+                    <img src="../images/label.png" class="button-pic0">
+                    <span>投放卡片</span>
+                    <img src="../images/invert_arrow.png" class="button-pic">
+                </button>
+            </div>
+
+            <div>
+                <button>
+                    <img src="../images/label.png" class="button-pic0">
+                    <span>管理标签</span>
+                    <img src="../images/invert_arrow.png" class="button-pic">
+                </button>
+            </div>
+
+            <div>
+                <button>
+                    <img src="../images/label.png" class="button-pic0">
+                    <span>导出会员</span>
+                    <img src="../images/invert_arrow.png" class="button-pic">
+                </button>
+            </div>
+        </div>
+
+        <!-- information table -->
+        <div class="table">
+            <div class="table-row">
+                <div class="check-box-width">
+                    <input type="checkbox">
+                </div>
+                <div class="t-id">
+                    <a>会员号</a>
+                </div>
+                <div class="t-cname">
+                    <a>中文名</a>
+                </div>
+                <div class="t-ename">
+                    <a>英文名</a>
+                </div>
+                <div class="t-sex">
+                    <a>性别</a>
+                </div>
+                <div class="t-mail">
+                    <a>邮箱</a>
+                </div>
+                <div class="t-gh">
+                    <a>所属分工会</a>
+                </div>
+                <div class="t-group">
+                    <a>所属小组</a>
+                </div>
+                <div class="t-birth">
+                    <a>出生月份</a>
+                </div>
+                <div class="t-more">
+                    <a></a>
+                </div>
+            </div>
+            <div ng-repeat="memberItem in members" us-information="memberItem">
+            </div>
+
+        </div>
+
+        <div us-pagination go-page="goPage(pageIndex)" total-page-count="pagesCount" current-page="currentPage"></div>
+    </div>
+</div>

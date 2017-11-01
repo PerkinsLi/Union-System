@@ -1,0 +1,12 @@
+<div class="table-row   (index & 1 ? table-row-bg-color : )  ">
+    <div class="check-box-width"><input type="checkbox"></div>
+    <div class="t-id"><a ng-bind="memberItem.id"></a></div>
+    <div class="t-cname"><a ng-bind="memberItem.chineseName"></a></div>
+    <div class="t-ename"><a ng-bind="memberItem.englishName"></a></div>
+    <div class="t-sex"><a ng-bind="memberItem.gender"></a></div>
+    <div class="t-mail"><a ng-bind="memberItem.email"></a></div>
+    <div class="t-gh"><a>    </a></div>
+    <div class="t-group"><a>    </a></div>
+    <div class="t-birth"><a>{{memberItem.id}}月</a></div>
+    <div class="t-more"><a ui-sref="detail({ id: memberItem.id})">详情</a></div>
+</div>
