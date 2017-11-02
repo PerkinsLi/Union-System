@@ -6,6 +6,12 @@
     getMembersAPI: "http://localhost:8081/api/getMembers",
     loginPath: "http://localhost:8081/api/login"
   });
+
+  // 初始化一些$rootScope全局变量
+  app.run(function($rootScope) {
+    // 存储members信息
+    $rootScope.members = [];
+});
   // stateProvider.
   app.config(function ($stateProvider, $urlRouterProvider) {
     var loginState = {
@@ -189,7 +195,7 @@
     $scope.pagesCount = 9;
     $scope.maxButtonNum = 5;
     $scope.buttonNums = 1;
-    $rootScope.members = [];
+
 
     $scope.userName = $cookies.get("userName");
     $scope.currentPage = $stateParams["pageIndex"];
@@ -211,7 +217,6 @@
           $scope.currentPage = $stateParams["pageIndex"] ? $stateParams["pageIndex"] : 1;
 
           $scope.loadMembers($scope.currentPage, $scope.pageSize);
-          console.log("调用init()方法，调用loadMember方法");
         }
       });
     }
@@ -228,7 +233,6 @@
       }).then(function (response) {
         $rootScope.members = response.data;
       });
-      console.log("调用loadmembers方法");
     }
 
     // go current page.
