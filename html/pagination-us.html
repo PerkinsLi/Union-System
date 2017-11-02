@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Angularjs分页控件</title>
+  <script src="../node_modules/angular/angular.min.js"></script> <!-- 引入angularjs文件，而且是1.x版本的 -->
+  <script src="../js/angular-js.js"></script> <!-- 引入angularjs分页控件 -->
+  <script src="app.js"></script> <!-- 引入app.js -->
+</head>
+<body>
+
+<!-- 控制器 -->
+<div ng-controller="myCtrl">
+
+  <!-- 分页控件指令 ，可以是元素 或者 属性 -->
+  <my-pagination page-option="option"></my-pagination>
+
+</div>
+
+</body>
+</html>

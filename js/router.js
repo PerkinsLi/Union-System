@@ -189,14 +189,15 @@
     $scope.pagesCount = 9;
     $scope.maxButtonNum = 5;
     $scope.buttonNums = 1;
-    $scope.members = [];
+    $rootScope.members = [];
 
     $scope.userName = $cookies.get("userName");
     $scope.currentPage = $stateParams["pageIndex"];
     $rootScope.title = "Members";
     $rootScope.loginBgState = $rootScope.title === "Login";
 
-    init();
+      init();
+
 
     // Members page default information.
     function init() {
@@ -210,6 +211,7 @@
           $scope.currentPage = $stateParams["pageIndex"] ? $stateParams["pageIndex"] : 1;
 
           $scope.loadMembers($scope.currentPage, $scope.pageSize);
+          console.log("调用init()方法，调用loadMember方法");
         }
       });
     }
@@ -224,8 +226,9 @@
           pageSize: pageSize
         }
       }).then(function (response) {
-        $scope.members = response.data;
+        $rootScope.members = response.data;
       });
+      console.log("调用loadmembers方法");
     }
 
     // go current page.
@@ -273,19 +276,40 @@
       replace: true,
       templateUrl: "../html/pagination.html",
       link: function (scope) {
+        // 获取要显示页数长度
         scope.maxButtonNum = Math.min(5, scope.totalPageCount);
-        if (scope.currentPage > 2 && scope.currentPage <= scope.totalPageCount - 2) {
-          scope.startIndex = scope.currentPage - 2;
-        } else if (scope.currentPage > 2 && scope.currentPage > scope.totalPageCount - 2) {
-          scope.startIndex = scope.currentPage - 4;
-        } else {
-          scope.startIndex = 1;
-        }
+        //获取要显示页数页码
+        scope.pages = getRange(scope.currentPage,scope.totalPageCount,scope.maxButtonNum);
 
-        scope.pages = [];
 
-        for (var index = 0; index < scope.maxButtonNum; index++) {
-          scope.pages.push(index + scope.startIndex);
+        // 分页算法
+        function getRange(curr, all, count) {
+          //计算显示的页数
+          curr = parseInt(curr);
+          all = parseInt(all);
+          count = parseInt(count);
+          var from = curr - parseInt(count / 2);
+          var to = curr + parseInt(count / 2) + (count % 2) - 1;
+          //显示的页数容处理
+          if (from <= 0) {
+            from = 1;
+            to = from + count - 1;
+            if (to > all) {
+              to = all;
+            }
+          }
+          if (to > all) {
+            to = all;
+            from = to - count + 1;
+            if (from <= 0) {
+              from = 1;
+            }
+          }
+          var range = [];
+          for (var i = from; i <= to; i++) {
+            range.push(i);
+          }
+          return range;
         }
 
         scope.click = function (pageIndex) {
