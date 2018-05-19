@@ -1,0 +1,48 @@
+.top {
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #f4f4f4;
+  line-height: 30px;
+}
+.top .top-content {
+  width: 1228px;
+  height: 30px;
+  margin: 0 auto;
+}
+.top .top-content .list-login {
+  height: 30px;
+  color: #ff4040;
+  line-height: 30px;
+  padding-right: 20px ;
+  float: right;
+  cursor: pointer;
+}
+.top .top-content .top-bar {
+  height: 30px;
+  color: #666;
+  line-height: 30px;
+  padding-right: 20px;
+  float: right;
+  cursor: pointer;
+}
+.top .top-content .top-bar a {
+  color: #666666;
+}
+.top .top-content .top-bar a:hover {
+  color: #ff4040;
+}
+.top .top-content .first-page {
+  height: 30px;
+  color: #666;
+  line-height: 30px;
+  padding-right: 20px;
+  float: left;
+  cursor: pointer;
+}
+.top .top-content .first-page a {
+  color: #666666;
+}
+.top .top-content .first-page a:hover {
+  color: #ff4040;
+}

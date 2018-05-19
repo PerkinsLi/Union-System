@@ -1,5 +1,5 @@
 (function () {
-  var app = window.us = angular.module("unionSystem", ['ui.router', 'ngCookies']);
+  var app = window.us = angular.module("secondKill", ['ui.router', 'ngCookies']);
 
   app.constant('constantMethod', {
     getMembersCountAPI: "http://localhost:8081/api/getMembersCount",

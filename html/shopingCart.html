@@ -1,0 +1,31 @@
+<div us-top></div>
+<div class="shoping-cart">
+    <div class="goods-content">
+        <div class="goods" ng-repeat="g in goods" id="{{g.id}}">
+            <input type="checkbox" id="checkBox_{{g.scId}}" class="check-box" ng-click="checkBoxClick(g.goodsPrice, g.goodsNumber, g.scId)">
+            <div class="img"><img ng-src="{{g.goodsImg}}"/></div>
+            <div class="goods-name" ng-bind="g.goodsName"></div>
+            <div class="price" ><span>价格：</span><b ng-bind="g.goodsPrice" class="goods-price"></b><b>￥</b></div>
+            <div class="change-goods-number">
+                <input type="text" id="buyNum_{{g.scId}}"  class="input-border" value="{{g.goodsNumber}}"/>
+                <div class="add-reduce">
+                    <span class="fa fa-angle-up" ng-click="modifyBuyNum(g.scId,+1)"></span>
+                    <span class="fa fa-angle-down" ng-click="modifyBuyNum(g.scId,-1)"></span>
+                </div>
+            </div>
+            <div class="goods-number"><span>数量：</span><span>×</span><span ng-bind="g.goodsNumber" id="numberSpan_{{g.scId}}"></span></div>    
+        </div>
+    </div>
+    <div class="count">
+        <input type="checkbox" id="checkedAll" class="all-checked-checkBox" ng-click="checkAll()"/>
+        <span class="all-checked-text">全选</span>
+        <span class="count-money" ng-click="createOrder()">结算</span>
+        <span class="count-number">
+            <b ng-bind="countNumber"></b>
+            <b>￥</b>
+        </span>
+        <span class="count-gong">共</span>
+        
+        
+    </div>
+</div>

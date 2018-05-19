@@ -1,0 +1,206 @@
+.goods-list .search {
+  width: 1228px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.goods-list .search .search-warp {
+  width: 754px;
+  height: 36px;
+  float: left;
+  padding: 2px;
+  border-radius: 2px;
+  background-color: #ff4040;
+}
+.goods-list .search .search-warp input {
+  float: left;
+  width: 685px;
+  height: 36px;
+  outline: 0 none;
+  border: 0 none;
+  padding: 0px;
+  padding-left: 15px;
+  font-size: 14px;
+  color: #aaa;
+  line-height: 36px;
+}
+.goods-list .search .search-warp .search-button {
+  float: left;
+  width: 50px;
+  height: 36px;
+  border: 0 none;
+  background-color: #ff4040;
+  text-align: center;
+  line-height: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+.goods-list .search .search-warp .search-button .fa-search {
+  width: 50px;
+  height: 36px;
+  color: #FFFFFF;
+  line-height: 36px;
+}
+.goods-list .search .shopping {
+  float: right;
+  width: 132px;
+  height: 40px;
+  border: 1px solid #d7d7d7;
+  cursor: pointer;
+}
+.goods-list .search .shopping .fa-cart-plus {
+  color: #FF4040;
+  line-height: 40px;
+  margin-left: 20px;
+}
+.goods-list .search .shopping .shopping-word {
+  text-align: center;
+  line-height: 40px;
+  color: #666;
+  font-size: 16px;
+  margin-left: 20px;
+}
+.goods-list .screen {
+  width: 1228px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+.goods-list .screen .title {
+  font-size: 16px ;
+}
+.goods-list .screen span {
+  display: inline-block;
+  float: left;
+}
+.goods-list .screen .skill {
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.goods-list .screen .skill:hover {
+  color: #FF3C3C ;
+}
+.goods-list .screen .price span:first {
+  margin-right: 20px;
+}
+.goods-list .screen .price div {
+  float: left;
+}
+.goods-list .screen .price .text-input {
+  float: left;
+  width: 40px;
+}
+.goods-list .screen .price .button-input {
+  cursor: pointer;
+}
+.goods-list .content {
+  width: 1228px;
+  min-height: 340px;
+  margin: 0 auto;
+}
+.goods-list .content .goods {
+  width: 248px;
+  height: 330px;
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+.goods-list .content .goods img {
+  width: 230px;
+  height: 230px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.goods-list .content .goods .price {
+  width: 230px;
+  height: 25px;
+  font-size: 16px;
+  color: #FF3C3C;
+  margin: 0 auto;
+  font-style: normal;
+}
+.goods-list .content .goods .description {
+  width: 230px;
+  height: 36px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.goods-list .content .goods .description:hover {
+  color: #FF3C3C;
+}
+.goods-list .content .goods .buy {
+  width: 230px;
+  height: 37px;
+  margin: 0 auto;
+}
+.goods-list .content .goods .buy .input-border {
+  width: 30px;
+  height: 28px;
+  border: 1px solid #D7D7D7;
+  float: left;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 28px;
+}
+.goods-list .content .goods .buy .add-reduce {
+  width: 16px;
+  height: 28px;
+  margin-left: 3px ;
+  float: left;
+}
+.goods-list .content .goods .buy .add-reduce span {
+  width: 16px;
+  height: 14px;
+  border: 1px solid #D7D7D7;
+  text-align: center;
+  cursor: pointer;
+}
+.goods-list .content .goods .buy .add-reduce span:hover {
+  color: #FF3C3C;
+}
+.goods-list .content .goods .buy .add-cart {
+  width: 92px;
+  height: 28px;
+  margin-left: 70px;
+  background-color: #FF4040;
+  color: #FCFCFC;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 28px;
+}
+.goods-list .pagation {
+  width: 550px;
+  height: 36px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.goods-list .pagation .default-page {
+  width: 84px;
+  height: 36px;
+  background-color: #E5E5E5;
+  color: #999999;
+  text-align: center;
+  line-height: 36px;
+  border: none;
+  cursor: pointer;
+}
+.goods-list .pagation .number-page {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  border: none;
+  cursor: pointer;
+}
+.goods-list .pagation button:hover {
+  background-color: #ff8c64;
+  color: #FAFAFA;
+}

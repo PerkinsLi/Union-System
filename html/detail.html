@@ -1,169 +1,32 @@
-<div class="detail-page">
-  <div class="left" ng-controller="navigationController">
-    <div class="title">
-      <div class="profile"></div>
-      <a class="website-name">联合工会会员信息系统</a>
-      <div>
-        <span>{{userName}}</span>
-        <img src="../images/triangle.png" alt="展开">
-      </div>
-    </div>
+<div us-top></div>
+<div class="detail">
+    <div class="content">
+        <div class="left">
+            <img ng-src="{{goods.goodsImg}}" />
+        </div>
+        <div class="right">
+            <div class="title" ng-bind="goods.goodsName"></div>
+            <div class="detail" ng-bind="goods.goodsDetail"></div>
+            <div class="price"><b>￥</b>
+                <b ng-bind="goods.goodsPrice" ng-if="goods.secondkillGoodsPrice == null"></b>
+                <b ng-bind="goods.secondkillGoodsPrice" ng-if="goods.secondkillGoodsPrice != null"></b>
+            </div>
 
-    <div id="line"></div>
+            <div ng-if="goods.secondkillGoodsPrice != null" class="sk-status" >
+                <div ng-bind="skStatusText" class="skStatusText"></div>
+                <div ng-if="$scope.remainSeconds != 0" ng-bind="skDate" class="skDate"></div>
+            </div>
 
-    <!-- Navigation -->
-    <div class="nav">
-      <div ng-repeat="navLevelOneItem in nav" class="nav-container" ng-init="outerIndex = $index">
-        <div class="nav-level-1" ng-click="navLevelOneSelected($index)" ng-class="{true: 'selected', false: 'un-selected'}[navLevelOneItem.selected]">
-          <img ng-src="{{navLevelOneItem.signIcon}}">
-          <span ng-bind="navLevelOneItem.name"></span>
-          <img ng-click="navExpand($index)" ng-src="{{navLevelOneItem.stateIcon}}">
+            <div class="buy">
+                <input ng-if="goods.secondkillGoodsPrice == null" type="text" id="buyNum_{{goods.id}}" value="1" class="input-border"/>
+                <div class="add-reduce" ng-if="goods.secondkillGoodsPrice == null">
+                    <span class="fa fa-angle-up" ng-click="modifyBuyNum(goods.id,+1)"></span>
+                    <span class="fa fa-angle-down" ng-click="modifyBuyNum(goods.id,-1)"></span>
+                </div>
+                <div class="add-cart" ng-click="addCart(goods.id)" ng-if="goods.secondkillGoodsPrice == null">加入购物车</div>
+                <div class="add-cart" ng-click="shopingNow(goods.id)" ng-if="goods.secondkillGoodsPrice == null">立刻购买</div>
+                <div class="add-cart" ng-if="goods.secondkillGoodsPrice != null">立即秒杀</div>
+            </div>
         </div>
-
-        <div class="nav-level-2" ng-class="{'nav-level-2-show': navLevelOneItem.expand,'selected': navItemTwo.selected}" ng-repeat="navItemTwo in navLevelOneItem.subNavs"
-          ng-click="navLevelTwoSected(outerIndex, $index)">
-          <img ng-src="{{navItemTwo.signIcon}}">
-          <span ng-click="" ng-class="{true: 'selected'}[navItemTwo.selected]" ng-bind="navItemTwo.name">
-                    </span>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="right" ng-controller="detail" ng-repeat="m in member">
-    <div class="title">
-      <span>工会会员详情</span>
-    </div>
-
-    <div class="information">
-      <div class="row">
-        <div class="c-one">
-          <span>性别</span>:
-          <span class="value" ng-bind="m.gender">男</span>
-        </div>
-        <div class="c-two">
-          <span>证件类型</span><span>:</span>
-          <span class="value">身份证</span>
-        </div>
-        <div class="c-three">
-          <span>证件号码</span><span>:</span>
-          <span class="value">411689166502033698</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="c-one">
-          <span>民族</span><span>:</span>
-          <span class="value">汉族</span>
-        </div>
-        <div class="c-two">
-          <span>政治面貌</span><span>:</span>
-          <span class="value">共青团员</span>
-        </div>
-        <div class="c-three">
-          <span>学历</span><span>:</span>
-          <span class="value">本科</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="c-one">
-          <span>国家或地区</span><span>:</span>
-          <span class="value">中国</span>
-        </div>
-        <div class="c-two">
-          <span>籍贯</span><span>:</span>
-          <span class="value">河南省</span>
-        </div>
-        <div class="c-three">
-          <span>出生地点</span><span>:</span>
-          <span class="value">张江高科</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="c-one">
-          <span>出生日期</span><span>:</span>
-          <span class="value">1995/02/03</span>
-        </div>
-        <div class="c-two">
-          <span>手机号</span><span>:</span>
-          <span class="value">15946589553</span>
-        </div>
-        <div class="c-three">
-          <span>邮箱</span><span>:</span>
-          <span class="value" ng-bind="m.email"></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="information">
-      <div class="row">
-        <div class="c-one">
-          <span>员工号</span><span>:</span>
-          <span class="value" ng-bind="m.id"></span>
-        </div>
-        <div class="c-two">
-          <span>入职日期</span>:
-          <span class="value">2011/03/02</span>
-        </div>
-        <div class="c-three">
-          <span>离职日期:</span>
-          <span class="value"></span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="c-one-long">
-          <span>部门:</span>
-          <span class="value">OOT-Parnter RelationShip Office-MC</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="c-one-long">
-          <span>职位:</span>
-          <span class="value">Dr-Parnter RelationShip Office</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="c-one">
-          <span>休假日期:</span>
-          <span class="value"></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="information">
-      <div class="row">
-        <div class="c-one">
-          <span>入会日期:</span>
-          <span class="value">2011/03/02</span>
-        </div>
-        <div class="c-two">
-          <span>所属分工会:</span>
-          <span class="value">上海</span>
-        </div>
-        <div class="c-three">
-          <span>所属小组:</span>
-          <span class="value"></span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="c-one-long">
-          <span>上海市总工会会员服务卡:</span>
-          <span class="value">4512453612155622</span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="etiket">
-          <span>标签:</span>
-          <span class="value"><input type="text" placeholder="请输入新标签"/></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="resume">
-      <span>个人简历:</span>
-      <div class="person-etiket"></div>
-      <div class="button">
-        <button class="reset-btn-bg-color">取消</button>
-        <button class="submit-btn-bg-color">确定</button>
-      </div>
-    </div>
-  </div>
 </div>

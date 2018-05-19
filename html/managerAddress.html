@@ -1,0 +1,44 @@
+<div us-top></div>
+<div class="manager-address">
+    <div class="address-top">
+        <div class="consignee">收件人</div>
+        <div class="address">地址</div>
+        <div class="mobile">联系电话</div>
+        <div class="operation">操作</div>
+    </div>
+    <div class="content">
+        <div class="address-border" ng-repeat="address in addresses">
+            <div class="consignee-content" ng-bind="address.consigneeName"></div>
+            <div class="address-content" ng-bind="address.address"></div>
+            <div class="mobile-content" ng-bind="address.mobile"></div>
+            <div class="operation-content">
+                <span class="update-button" ng-click="showUpdateDiv(address.id)">修改</span>
+                <span class="delete-buton" ng-click="deleteAddress(address.id)">删除</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="create-address">
+    </div>
+<div class="pop">
+        <div class="content">
+            <div class="ca-div-border" id="consigneeNameBorder">
+                <span class="ca-span">收件人：</span>
+                <div class="ca-input-border"><input type="text" class="ca-input" id="consigneeName" ng-blur="validation($event)" /></div>
+            </div>
+            <div class="ca-div-border" id="mobileBorder">
+                <span class="ca-span">手机号：</span>
+                <div class="ca-input-border"><input type="text" class="ca-input" id="mobile" ng-blur="validationMobile($event)" /></div>
+            </div>
+            <div class="ca-div-border" id="addressBorder">
+                <span class="ca-span">详细地址：</span>
+                <div class="ca-input-border"><input type="text" class="ca-input" id="address" ng-blur="validation($event)" /></div>
+            </div>
+            <div class="ca-button">
+                <div class="button" ng-click="updateCancle()">取消</div>
+                <div class="button" ng-click="updateAddress()">提交</div>
+            </div>
+        </div>
+    </div>

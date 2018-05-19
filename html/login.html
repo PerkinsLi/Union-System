@@ -1,24 +1,17 @@
-<div class="login-page">
-    <div class="content" ng-controller="login">
-        <div class="img_div">
-            <img src="../images/entrance_image.png">
-        </div>
 
-        <div class="login_div">
-            <div class="title_div">
-                <p class="union_information">联合工会会员信息系统</p>
-                <p class="user_login">用户登录</p>
-            </div>
-            <div class="error" ng-class="{true : 'show_error_div'}[showState]">{{loginError}}</div>
-            <div class="login_form">
-                <input type="text" ng-model="username" ng-keydown="keyDownEvent()"><br>
-                <input type="password" ng-model="password" ng-keydown="keyDownEvent()">
-                <button name="login-btn"
-                        ng-click="login()"
-                        ng-disabled="!username || !password"
-                        ng-class="{'disable-bg-color': !username || !password}">立即登录</button>
-                <p><a href="#">忘记密码</a></p>
-            </div>
-        </div>
-    </div>
+<div class="login" ng-controller="login">
+	<div class="top">
+		<div class="left">商城登录</div>
+		<div class="right">注册新账号</div>
+	</div>
+	<div class="input-box">
+		<i class="fa fa-user-o fa-lg"></i>
+		<input type="text" id = "mobile" name="mobile"   ng-model="mobile" placeholder="手机号"/>
+	</div>
+	<div class="input-box">
+		<i class="fa fa-key fa-lg"></i>
+		<input type="password" id = "password" name="password" ng-model="password" placeholder="密码"/>
+	</div>
+	<input type="button" value="登录" ng-click="login()" class="login-button"/>
+			
 </div>

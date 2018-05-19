@@ -1,0 +1,24 @@
+<div class="pagation">
+        <button class="default-page"
+            ng-click="click({'pageIndex':1})"
+            ng-disabled="+currentPage === 1"
+            ng-class="{'disable-hover': +currentPage === 1}">首页</button>
+        <button class="default-page"
+            ng-click="click({'pageIndex': currentPage - 1})"
+            ng-disabled="+currentPage === 1"
+            ng-class="{'disable-hover': +currentPage === 1}">上一页</button>
+        <button class="number-page"
+            ng-repeat="pageIndex in pages"
+            ng-click="click({'pageIndex': pageIndex})"
+            ng-bind="pageIndex"
+            ng-class="{'paging-btn-bg-color': +pageIndex === +currentPage}"></button>
+        <button class="default-page"
+            ng-click="click({'pageIndex': +currentPage + 1})"
+            ng-disabled="+currentPage === +totalPageCount"
+            ng-class="{'disable-hover': +currentPage === +totalPageCount}">下一页</button>
+        <button class="default-page"
+            ng-click="click({'pageIndex': +totalPageCount})"
+            ng-disabled="+currentPage === +totalPageCount"
+            ng-class="{'disable-hover': +currentPage === +totalPageCount}">尾页</button>
+        
+</div>

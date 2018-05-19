@@ -1,0 +1,193 @@
+.create-order .address-model {
+  width: 1000px;
+  min-height: 300px;
+  margin: 0 auto;
+  border: 1px solid #dddddd;
+}
+.create-order .address-model .address-title {
+  display: block;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.create-order .address-model .address-list {
+  width: 980px;
+  height: 240px;
+  margin-left: 10px;
+}
+.create-order .address-model .address-list .address {
+  width: 200px;
+  height: 100px;
+  float: left;
+  margin-right: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1px dashed #666666;
+}
+.create-order .address-model .address-list .address .text-title {
+  margin-left: 5px;
+}
+.create-order .address-model .manager-address {
+  width: 980px;
+  height: 50px;
+}
+.create-order .address-model .manager-address .add-address {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #ff3c3c;
+  color: #f4f4f4;
+  float: left;
+  margin-left: 20px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.create-order .address-model .manager-address .to-manager {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #ff3c3c;
+  color: #f4f4f4;
+  float: right;
+  text-align: center;
+  line-height: 40px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.create-order .goods-model {
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+}
+.create-order .goods-model .goods {
+  width: 1000px;
+  height: 200px;
+  margin-top: 20px;
+  border: 1px solid #dddddd;
+}
+.create-order .goods-model .goods .img {
+  width: 200px;
+  height: 200px;
+  float: left;
+  cursor: pointer;
+}
+.create-order .goods-model .goods .img img {
+  width: 200px;
+  height: 200px;
+}
+.create-order .goods-model .goods .goods-name {
+  width: 300px;
+  line-height: 200px;
+  float: left;
+  text-align: center;
+}
+.create-order .goods-model .goods .price {
+  width: 150px;
+  line-height: 200px;
+  float: left;
+  text-align: center;
+}
+.create-order .goods-model .goods .goods-number {
+  width: 100px;
+  line-height: 200px;
+  float: right;
+}
+.create-order .goods-model .pay {
+  width: 1000px;
+  height: 60px;
+  margin-top: 20px;
+}
+.create-order .goods-model .pay .count-money {
+  float: right;
+  line-height: 60px;
+  margin-right: 50px;
+}
+.create-order .goods-model .pay .pay-button {
+  width: 80px;
+  height: 60px;
+  float: right;
+  background-color: red;
+  border-radius: 10px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.create-address {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+  height: 100%;
+  filter: alpha(opacity=60);
+  /*设置透明度为60%*/
+  opacity: 0.6;
+  /*非IE浏览器下设置透明度为60%*/
+  display: none;
+  z-Index: 999;
+}
+.pop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  z-Index: 9999;
+}
+.pop .content {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  top: -150px;
+  left: -250px;
+  background-color: #fff;
+}
+.pop .content .ca-div-border {
+  width: 370px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.pop .content .ca-div-border .ca-span {
+  width: 60px;
+  display: inline-block;
+  float: left;
+  line-height: 50px;
+  color: #666;
+}
+.pop .content .ca-div-border .ca-input-border {
+  width: 300px;
+  height: 50px;
+  border: 1px solid #666;
+  float: left;
+  cursor: text;
+}
+.pop .content .ca-div-border .ca-input-border .ca-input {
+  width: 250px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 13px;
+  border: none;
+}
+.pop .content .ca-button {
+  width: 300px;
+  height: 50px;
+  margin-top: 30px;
+}
+.pop .content .ca-button .button {
+  width: 50px;
+  height: 30px;
+  background-color: #ff4040;
+  color: #f4f4f4;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 3px;
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+}

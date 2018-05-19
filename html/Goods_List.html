@@ -1,0 +1,51 @@
+
+		<div us-top></div>
+		<div class="goods-list" >
+
+			<div class="search">
+				<div class="search-warp">
+					<input type="text" placeholder="商品名称"/>
+					<div class="search-button" >
+						<span  class="fa fa-search fa-2x" ng-click="searchName($event)"></span>
+					</div>
+				</div>
+				<div class="shopping" ng-click="toShopingCart()">
+					<span class="fa fa-cart-plus fa-2x">
+					<span class="shopping-word" >购物车</span>
+				</div>
+			</div>
+			<div class="screen">
+				<span class="title">筛选: </span>
+				<span class="skill" ng-click="getSkGoods($event)">秒杀商品</span>
+				<div class="price">
+					<span>价格区间:</span>
+					<input type="text" class="text-input" name="minPrice"/>
+					<div>-</div>
+					<input type="text" class="text-input" name="maxPrice"/>
+					<input type="button" value="确定" class="button-input" ng-click="searchPrice()"/>
+					<input type="button" value="取消"  class="button-input" ng-click="resetSearchPrice()"/>
+				</div>
+			</div>
+			<div class="content">
+			    <div class="goods" ng-repeat="g in goodsList">
+			        <img ng-src="{{g.goodsImg}}" />
+					<div class="price"><b>￥</b>
+						<b ng-bind="g.goodsPrice" ng-if="g.secondkillGoodsPrice == null"></b>
+						<b ng-bind="g.secondkillGoodsPrice" ng-if="g.secondkillGoodsPrice != null"></b>
+					</div>
+			        <span class="description" ng-bind="g.goodsDetail" ng-click="toDetail(g.id)"></span>
+			        <div class="buy">
+			            <input type="text" id="buyNum_{{g.id}}" value="1" class="input-border"/>
+			            <div class="add-reduce">
+			            <span class="fa fa-angle-up" ng-click="modifyBuyNum(g.id,+1)"></span>
+			            <span class="fa fa-angle-down" ng-click="modifyBuyNum(g.id,-1)"></span>
+			            </div>
+						<div class="add-cart" ng-click="addCart(g.id)" ng-if="g.secondkillGoodsPrice == null">加入购物车</div>
+						<div class="add-cart" ng-if="g.secondkillGoodsPrice != null">立即秒杀</div>
+			        </div>
+			    </div>
+                 
+			</div>
+
+			<div us-pagination go-page="goPage(pageIndex)" current-page = "currentPage" page-data = "pageData"></div>
+		</div>

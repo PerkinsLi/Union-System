@@ -1,0 +1,123 @@
+.shoping-cart .goods-content {
+  width: 1000px;
+  min-height: 100px;
+  margin: 0 auto;
+}
+.shoping-cart .goods-content .goods {
+  width: 1000px;
+  height: 200px;
+  margin-top: 20px;
+  border: 1px solid #dddddd;
+}
+.shoping-cart .goods-content .goods .check-box {
+  width: 50px;
+  height: 200px;
+  float: left;
+}
+.shoping-cart .goods-content .goods .img {
+  width: 200px;
+  height: 200px;
+  float: left;
+  cursor: pointer;
+}
+.shoping-cart .goods-content .goods .img img {
+  width: 200px;
+  height: 200px;
+}
+.shoping-cart .goods-content .goods .goods-name {
+  width: 300px;
+  line-height: 200px;
+  float: left;
+  text-align: center;
+}
+.shoping-cart .goods-content .goods .price {
+  width: 150px;
+  line-height: 200px;
+  float: left;
+  text-align: center;
+}
+.shoping-cart .goods-content .goods .change-goods-number {
+  width: 80px;
+  height: 200px;
+  float: left;
+}
+.shoping-cart .goods-content .goods .change-goods-number .input-border {
+  width: 30px;
+  height: 28px;
+  border: 1px solid #D7D7D7;
+  float: left;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 28px;
+  margin-top: 80px;
+}
+.shoping-cart .goods-content .goods .change-goods-number .add-reduce {
+  width: 16px;
+  height: 28px;
+  margin-left: 3px ;
+  float: left;
+  margin-top: 80px;
+}
+.shoping-cart .goods-content .goods .change-goods-number .add-reduce span {
+  width: 16px;
+  height: 14px;
+  border: 1px solid #D7D7D7;
+  text-align: center;
+  cursor: pointer;
+}
+.shoping-cart .goods-content .goods .change-goods-number .add-reduce span:hover {
+  color: #FF3C3C;
+}
+.shoping-cart .goods-content .goods .goods-number {
+  width: 100px;
+  line-height: 200px;
+  float: right;
+}
+.shoping-cart .count {
+  width: 1000px;
+  height: 40px;
+  border: 1px solid #f4f4;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.shoping-cart .count .all-checked-checkBox {
+  width: 20px;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  margin-left: 20px;
+}
+.shoping-cart .count .all-checked-text {
+  width: 30px;
+  height: 40px;
+  float: left;
+  line-height: 40px;
+  margin-top: 3px;
+}
+.shoping-cart .count .count-gong {
+  display: block;
+  float: right;
+  font-size: 15px;
+  line-height: 40px;
+  margin-right: 10px;
+}
+.shoping-cart .count .count-number {
+  display: block;
+  float: right;
+  font-size: 16px;
+  color: #f40;
+  line-height: 40px;
+  margin-right: 10px;
+}
+.shoping-cart .count .count-money {
+  display: block;
+  float: right;
+  width: 40px;
+  height: 40px;
+  background-color: #f40;
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}

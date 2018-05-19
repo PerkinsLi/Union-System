@@ -1,0 +1,53 @@
+
+<div us-top></div>
+<div class="create-order">
+    <div class="address-model">
+        <span class="address-title">地址：</span>
+        <div class="address-list">
+            <div class="address" id = "{{address.id}}" ng-repeat="address in addresses" ng-click="selectAddress(address.id)">
+                <div><span class="text-title">收件人：</span><span class="consigness-name" ng-bind="address.consigneeName"></span></div>
+                <div><span class="text-title">联系电话：</span><span class="mobile" ng-bind="address.mobile"></span></div>
+                <div><span class="text-title">详细地址：</span><span class="detail-address" ng-bind="address.address"></span></div>
+            </div>
+        </div>
+        <div class="manager-address">
+            <div class="add-address" ng-click="createAddress()">新增地址</div>
+            <div class="to-manager" ng-click="managerAddress()">管理地址</div>
+        </div>
+    </div>
+    <div class="goods-model">
+        <div class="goods" ng-repeat="orderInfo in orderInfos">
+            <div class="img"><img ng-src="{{orderInfo.goodsImage}}"/></div>
+            <div class="goods-name" ng-bind="orderInfo.goodsName"></div>
+            <div class="price" ng-if="goods.secondkillGoodsPrice == null"><span>价格：</span><b ng-bind="orderInfo.goodsPrice"></b><b>￥</b></div>
+            <div class="goods-number"><span>数量：</span><span>×</span><span ng-bind="orderInfo.goodsCount"></span></div>    
+        </div>
+        <div class="pay">
+            <div class="pay-button">立即支付</div>
+            <div class="count-money"><span>共</span><span ng-bind="countMoney"></span><b>￥</b></div>
+        </div>
+    </div>
+</div>
+
+<div class="create-address">
+</div>
+<div class="pop">
+    <div class="content">
+        <div class="ca-div-border" id="consigneeNameBorder">
+            <span class="ca-span">收件人：</span>
+            <div class="ca-input-border"><input type="text" class="ca-input" id="consigneeName" ng-blur="validation($event)" /></div>
+        </div>
+        <div class="ca-div-border" id="mobileBorder">
+            <span class="ca-span">手机号：</span>
+            <div class="ca-input-border"><input type="text" class="ca-input" id="mobile" ng-blur="validationMobile($event)" /></div>
+        </div>
+        <div class="ca-div-border" id="addressBorder">
+            <span class="ca-span">详细地址：</span>
+            <div class="ca-input-border"><input type="text" class="ca-input" id="address" ng-blur="validation($event)" /></div>
+        </div>
+        <div class="ca-button">
+            <div class="button" ng-click="addCancle()">取消</div>
+            <div class="button" ng-click="addSubmit()">提交</div>
+        </div>
+    </div>
+</div>
